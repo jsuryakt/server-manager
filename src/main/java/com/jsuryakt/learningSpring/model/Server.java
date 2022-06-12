@@ -4,6 +4,8 @@ import com.jsuryakt.learningSpring.enumeration.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import net.bytebuddy.implementation.bind.annotation.Default;
+import org.springframework.boot.context.properties.bind.DefaultValue;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -21,6 +23,5 @@ public class Server {
     private String ipAddress;
     private String name;
     private String memory;
-    private String type;
     private Status status;
 }

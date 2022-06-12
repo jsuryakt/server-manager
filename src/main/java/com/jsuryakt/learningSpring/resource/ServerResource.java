@@ -38,7 +38,6 @@ public class ServerResource {
 //    @ResponseStatus(value = HttpStatus.NOT_FOUND, reason = "Server not found")
     public ResponseEntity<Response> pingServer(@PathVariable("ipAddress") String ipAddress) throws IOException {
         Server server = serverService.ping(ipAddress);
-        if (server != null) {
             return ResponseEntity.ok(
                     Response.builder()
                             .timeStamp(now())
@@ -48,8 +47,6 @@ public class ServerResource {
                             .statusCode(HttpStatus.OK.value())
                             .build()
             );
-        }
-        return (ResponseEntity<Response>) ResponseEntity.status(HttpStatus.NOT_FOUND);
     }
 
     @PostMapping("/save")
